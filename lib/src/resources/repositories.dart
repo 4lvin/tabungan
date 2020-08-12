@@ -6,4 +6,5 @@ class Repositories {
   Future getListPembayaran() => apiProviders.getListPembayaran();
   Future getListPenarikan() => apiProviders.getListPenarikan();
   Future getListSetor() => apiProviders.getListSetor();
+  Future login(String nama,String password) => apiProviders.login(nama, password);
 }

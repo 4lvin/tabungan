@@ -5,6 +5,7 @@ import 'package:http/http.dart' as client;
 import 'package:skripsitabungan/src/models/getListPembayaranModel.dart';
 import 'package:skripsitabungan/src/models/getListPenarikanModel.dart';
 import 'package:skripsitabungan/src/models/getListSetorModel.dart';
+import 'package:skripsitabungan/src/models/getLoginModel.dart';
 
 class ApiProviders {
   String url = "http://jongjava.tech/tabungan_siswa/api";
@@ -34,6 +35,16 @@ class ApiProviders {
     await client.get("$url/listsetoran.php");
     if (data.statusCode == 200) {
       return GetListSetorModel.fromJson(json.decode(data.body));
+    } else {
+      throw Exception('Failed to load Setor');
+    }
+  }
+
+  Future login(String nama,String password) async {
+    final data =
+    await client.get("$url/login.php?nama=$nama&password=$password");
+    if (data.statusCode == 200) {
+      return GetLoginModel.fromJson(json.decode(data.body));
     } else {
       throw Exception('Failed to load Setor');
     }

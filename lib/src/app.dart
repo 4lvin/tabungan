@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skripsitabungan/src/ui/home.dart';
+import 'package:skripsitabungan/src/ui/login.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -7,9 +8,10 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.red),
       home: Scaffold(
-        body: Home(),
+        body: Login(),
       ),
       routes: <String,WidgetBuilder>{
+        '/controllPage':(BuildContext context)=> new Home(),
       },
     );
   }
