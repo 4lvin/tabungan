@@ -36,7 +36,7 @@ class _PembayaranPageState extends State<PembayaranPage> {
               builder: (context,AsyncSnapshot<GetListPembayaranModel> snapshot){
                 if(snapshot.hasData){
                   return ListView.builder(
-                    itemCount: snapshot.data.result.length,
+                    itemCount: snapshot.data.data.length,
                       itemBuilder: (context,int i){
                       return Column(
                         children: <Widget>[
@@ -45,11 +45,11 @@ class _PembayaranPageState extends State<PembayaranPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Text("Pembayaran "+snapshot.data.result[i].pembayaran),
+                                Text("Pembayaran "+snapshot.data.data[i].pembayaran),
                                 Container(
                                   padding: EdgeInsets.all(8),
                                   color: Colors.red,
-                                    child: Text("Rp "+snapshot.data.result[i].penarikan,style: TextStyle(color: Colors.white),)),
+                                    child: Text("Rp "+snapshot.data.data[i].penarikan,style: TextStyle(color: Colors.white),)),
                               ],
                             ),
                           ),

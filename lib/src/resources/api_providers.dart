@@ -33,6 +33,7 @@ class ApiProviders {
   Future getListSetor(String id) async {
     final data =
     await client.get("$url/listsetoran.php?=id=$id");
+    print(id);
     if (data.statusCode == 200) {
       return GetListSetorModel.fromJson(json.decode(data.body));
     } else {

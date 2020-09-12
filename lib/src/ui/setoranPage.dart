@@ -36,7 +36,7 @@ class _SetoranPageState extends State<SetoranPage> {
               builder: (context,AsyncSnapshot<GetListSetorModel> snapshot){
                 if(snapshot.hasData){
                   return ListView.builder(
-                      itemCount: snapshot.data.result.length,
+                      itemCount: snapshot.data.data.length,
                       itemBuilder: (context,int i){
                         return Column(
                           children: <Widget>[
@@ -49,7 +49,7 @@ class _SetoranPageState extends State<SetoranPage> {
                                   Container(
                                       padding: EdgeInsets.all(8),
                                       color: Colors.green,
-                                      child: Text("Rp "+snapshot.data.result[i].setoran,style: TextStyle(color: Colors.white),)),
+                                      child: Text("Rp "+snapshot.data.data[i].setoran,style: TextStyle(color: Colors.white),)),
                                 ],
                               ),
                             ),

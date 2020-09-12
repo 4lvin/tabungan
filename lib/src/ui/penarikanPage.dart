@@ -36,7 +36,7 @@ class _PenarikanPageState extends State<PenarikanPage> {
               builder: (context,AsyncSnapshot<GetListPenarikanModel> snapshot){
                 if(snapshot.hasData){
                   return ListView.builder(
-                      itemCount: snapshot.data.result.length,
+                      itemCount: snapshot.data.data.length,
                       itemBuilder: (context,int i){
                         return Column(
                           children: <Widget>[
@@ -49,7 +49,7 @@ class _PenarikanPageState extends State<PenarikanPage> {
                                   Container(
                                       padding: EdgeInsets.all(8),
                                       color: Colors.red,
-                                      child: Text("Rp "+snapshot.data.result[i].penarikan,style: TextStyle(color: Colors.white),)),
+                                      child: Text("Rp "+snapshot.data.data[i].penarikan,style: TextStyle(color: Colors.white),)),
                                 ],
                               ),
                             ),
