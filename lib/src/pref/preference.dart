@@ -14,3 +14,33 @@ Future rmvTNama() async {
 
   return prefs.remove("nama");
 }
+
+Future setUrl(String value) async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  return prefs.setString("url", value);
+}
+Future getUrl() async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  return prefs.getString("url");
+}
+Future rmvUrl() async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  return prefs.remove("url");
+}
+
+Future setId(String value) async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  return prefs.setString("id", value);
+}
+Future getId() async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  return prefs.getString("id");
+}
+Future rmvId() async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  return prefs.remove("id");
+}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skripsitabungan/src/bloc/tabunganBloc.dart';
 import 'package:skripsitabungan/src/models/getListSetorModel.dart';
+import 'package:skripsitabungan/src/pref/preference.dart';
 
 class SetoranPage extends StatefulWidget {
   @override
@@ -11,7 +12,9 @@ class _SetoranPageState extends State<SetoranPage> {
 
   @override
   void initState() {
-    tabunganBloc.getSetor();
+    getId().then((value){
+      tabunganBloc.getSetor(value);
+    });
     super.initState();
   }
 

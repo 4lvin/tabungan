@@ -18,17 +18,17 @@ class TabunganBloc {
   PublishSubject<GetListSetorModel> get setoran => _listSetoranFetcher.stream;
   PublishSubject<GetLoginModel> get getLogin => _loginFetcher.stream;
 
-  getPembayaran() async {
-    GetListPembayaranModel getListPembayaranModel = await _repository.getListPembayaran();
+  getPembayaran(String id) async {
+    GetListPembayaranModel getListPembayaranModel = await _repository.getListPembayaran(id);
     _listPmbyaranFetcher.sink.add(getListPembayaranModel);
   }
-  getPenarikan() async {
-    GetListPenarikanModel getListPenarikanModel = await _repository.getListPenarikan();
+  getPenarikan(String id) async {
+    GetListPenarikanModel getListPenarikanModel = await _repository.getListPenarikan(id);
     _listPnarikanFetcher.sink.add(getListPenarikanModel);
   }
 
-  getSetor() async {
-    GetListSetorModel getListSetorModel = await _repository.getListSetor();
+  getSetor(String id) async {
+    GetListSetorModel getListSetorModel = await _repository.getListSetor(id);
     _listSetoranFetcher.sink.add(getListSetorModel);
   }
 

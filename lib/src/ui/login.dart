@@ -80,6 +80,8 @@ class _LoginState extends State<Login> {
                             tabunganBloc.login(nama.text, password.text);
                             tabunganBloc.getLogin.listen((value) {
                               setNama(value.data[0].nama);
+                              setUrl(value.data[0].url);
+                              setId(value.data[0].idSiswa);
                               Navigator.of(context)
                                   .pushNamedAndRemoveUntil('/controllPage', (Route<dynamic> route) => false);
                             });

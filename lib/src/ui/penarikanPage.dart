@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skripsitabungan/src/bloc/tabunganBloc.dart';
 import 'package:skripsitabungan/src/models/getListPenarikanModel.dart';
+import 'package:skripsitabungan/src/pref/preference.dart';
 
 class PenarikanPage extends StatefulWidget {
   @override
@@ -11,7 +12,9 @@ class _PenarikanPageState extends State<PenarikanPage> {
 
   @override
   void initState() {
-    tabunganBloc.getPenarikan();
+    getId().then((value){
+      tabunganBloc.getPenarikan(value);
+    });
     super.initState();
   }
 

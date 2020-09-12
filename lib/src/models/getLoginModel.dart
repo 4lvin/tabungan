@@ -33,6 +33,7 @@ class Datum {
     this.alamat,
     this.kelas,
     this.telepon,
+    this.url,
   });
 
   String idSiswa;
@@ -42,6 +43,7 @@ class Datum {
   String alamat;
   String kelas;
   String telepon;
+  String url;
 
   factory Datum.fromRawJson(String str) => Datum.fromJson(json.decode(str));
 
@@ -55,6 +57,7 @@ class Datum {
     alamat: json["alamat"],
     kelas: json["kelas"],
     telepon: json["telepon"],
+    url: json["url"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -65,5 +68,6 @@ class Datum {
     "alamat": alamat,
     "kelas": kelas,
     "telepon": telepon,
+    "url": url,
   };
 }

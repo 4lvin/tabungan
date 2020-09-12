@@ -10,9 +10,9 @@ import 'package:skripsitabungan/src/models/getLoginModel.dart';
 class ApiProviders {
   String url = "http://jongjava.tech/tabungan_siswa/api";
 
-  Future getListPembayaran() async {
+  Future getListPembayaran(String id) async {
     final data =
-    await client.get("$url/listpembayaran.php");
+    await client.get("$url/listpembayaran.php?id=$id");
     if (data.statusCode == 200) {
       return GetListPembayaranModel.fromJson(json.decode(data.body));
     } else {
@@ -20,9 +20,9 @@ class ApiProviders {
     }
   }
 
-  Future getListPenarikan() async {
+  Future getListPenarikan(String id) async {
     final data =
-    await client.get("$url/listpenarikan.php");
+    await client.get("$url/listpenarikan.php?id=$id");
     if (data.statusCode == 200) {
       return GetListPenarikanModel.fromJson(json.decode(data.body));
     } else {
@@ -30,9 +30,9 @@ class ApiProviders {
     }
   }
 
-  Future getListSetor() async {
+  Future getListSetor(String id) async {
     final data =
-    await client.get("$url/listsetoran.php");
+    await client.get("$url/listsetoran.php?=id=$id");
     if (data.statusCode == 200) {
       return GetListSetorModel.fromJson(json.decode(data.body));
     } else {

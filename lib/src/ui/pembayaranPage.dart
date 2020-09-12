@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skripsitabungan/src/bloc/tabunganBloc.dart';
 import 'package:skripsitabungan/src/models/getListPembayaranModel.dart';
+import 'package:skripsitabungan/src/pref/preference.dart';
 
 class PembayaranPage extends StatefulWidget {
   @override
@@ -11,7 +12,9 @@ class _PembayaranPageState extends State<PembayaranPage> {
 
   @override
   void initState() {
-    tabunganBloc.getPembayaran();
+    getId().then((value){
+      tabunganBloc.getPembayaran(value);
+    });
     super.initState();
   }
 
